@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  flask-app:
+    build: ./FlaskServer
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mqtt-broker
+    environment:
+      - MQTT_BROKER_HOST=mqtt-broker
+    restart: always
+    volumes:
+      - ./FlaskServer/db:/app/db  
+      - ./FlaskServer:/app
+    networks:
+      - my-network
+
+  mqtt-broker:
+    image: eclipse-mosquitto:2
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config   # Mount config directory
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    restart: always
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
+    driver: bridge

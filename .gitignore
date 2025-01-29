@@ -1,0 +1,12 @@
+# Ignore Python virtual environment
+venv/
+__pycache__/
+
+# Ignore IDE/Editor files
+.vscode/
+.idea/
+
+# Ignore Arduino build files
+/wifisetup/build/
+
+*.db
