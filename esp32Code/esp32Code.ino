@@ -23,9 +23,8 @@ void setup() {
 
     sensors.begin();
 
-    // Set up the deep sleep timer to wake up after 10 seconds
-    esp_sleep_enable_timer_wakeup(10 * 1000000);  // 10 seconds in microseconds
-
+    esp_sleep_enable_timer_wakeup(30 * 60 * 1000000);
+    
     if (esp_sleep_get_wakeup_cause() == ESP_SLEEP_WAKEUP_TIMER) {
         Serial.println("Woke up from deep sleep!");
     }
