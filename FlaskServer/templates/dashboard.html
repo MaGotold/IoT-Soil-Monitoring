@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .status-box {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 20px auto;
+            width: 200px;
+            border-radius: 10px;
+            color: white;
+        }
+        .wet {
+            background-color: green;
+        }
+        .dry {
+            background-color: red;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Namerané údaje za posledných 24h</h1>
+
+        <!-- Soil Condition -->
+        <div class="status-box {% if soil_status == 'wet' %}wet{% else %}dry{% endif %}">
+            Pôda je <span>{% if soil_status == 'wet' %}dostatočne vlhká{% else %}suchá{% endif %}</span>
+        </div>
+
+        <!-- Temperature and TDS Graph -->
+        <img src="/static/dashboard_plot.png" alt="Sensor Data Graph">
+    </div>
+</body>
+</html>
