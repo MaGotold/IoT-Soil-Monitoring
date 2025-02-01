@@ -2,9 +2,7 @@ version: "3.8"
 
 services:
   flask-app:
-    build: 
-      context: ./FlaskServer  # This ensures Railway uses FlaskServer as the build context
-        dockerfile: Dockerfile  # Explicitly specify Dockerfile if needed
+    build: ./FlaskServer
     ports:
       - "5000:5000"
     depends_on:
