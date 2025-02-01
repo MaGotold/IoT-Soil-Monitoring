@@ -14,7 +14,7 @@ WORKDIR /app
 # Copy the entire Flask app into the container
 COPY . /app/
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 
 # Set permissions for the db folder and file (make sure the app can read/write)
