@@ -14,7 +14,7 @@ COPY FlaskServer/requirements.txt /app/requirements.txt
 # Copy the entire Flask app into the container
 COPY . /app/
 
-RUN ls -l /app
+RUN ls -l /app/
 
 
 RUN pip install --no-cache-dir -r /app/requirements.txt
