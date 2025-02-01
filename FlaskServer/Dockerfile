@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 
 # Set permissions for the db folder and file (make sure the app can read/write)
-RUN chmod -R 777 /app/db/
+RUN chmod -R 777 /app/FlaskServer/db/
 
 # Expose the Flask app's port (adjust if necessary)
 EXPOSE 5000
