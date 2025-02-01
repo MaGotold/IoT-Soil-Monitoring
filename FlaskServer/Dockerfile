@@ -19,6 +19,8 @@ RUN ls -l /app/
 
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
+RUN ls -l /app/db/
+
 
 # Set permissions for the db folder and file (make sure the app can read/write)
 RUN chmod -R 777 /app/FlaskServer/db/
