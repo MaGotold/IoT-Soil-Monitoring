@@ -8,7 +8,7 @@ WORKDIR /app
 
 
 # Copy requirements.txt and install dependencies
-#COPY requirements.txt /app/
+COPY FlaskServer/requirements.txt /app/requirements.txt
 #RUN pip install --no-cache-dir -r /app/FlaskServer/requirements.txt
 
 # Copy the entire Flask app into the container
