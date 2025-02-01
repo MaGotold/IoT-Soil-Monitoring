@@ -13,6 +13,9 @@ COPY FlaskServer/requirements.txt /app/requirements.txt
 
 # Copy the entire Flask app into the container
 COPY . /app/
+# Ensure the db directory is copied into /app/db/
+COPY FlaskServer/db /app/db/
+
 
 RUN ls -l /app/
 
