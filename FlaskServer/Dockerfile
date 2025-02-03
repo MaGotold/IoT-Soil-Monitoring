@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY FlaskServer /app/
 
 # Set permissions for the db folder and file (make sure the app can read/write)
-RUN chmod -R 777 /app/db
+RUN mkdir -p /app/db && touch /app/db/sensor_data.db && chmod -R 777 /app/db
 
 # Expose the Flask app's port (adjust if necessary)
 EXPOSE 5000
