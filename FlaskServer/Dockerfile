@@ -7,8 +7,8 @@ RUN apt update && apt install -y sqlite3
 WORKDIR /app
 
 
-# Copy requirements.txt and install dependencies
-#COPY requirements.txt /app/
+#Copy requirements.txt and install dependencies
+COPY FlaskServer/requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the entire Flask app into the container
