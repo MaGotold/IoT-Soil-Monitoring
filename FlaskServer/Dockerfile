@@ -7,15 +7,15 @@ RUN apt update && apt install -y sqlite3
 WORKDIR /app
 
 
-#Copy requirements.txt and install dependencies
-COPY FlaskServer/requirements.txt /app/
+# Copy requirements.txt and install dependencies
+COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the entire Flask app into the container
-COPY FlaskServer /app/
+COPY . /app/
 
 # Set permissions for the db folder and file (make sure the app can read/write)
-RUN mkdir -p /app/db && touch /app/db/sensor_data.db && chmod -R 777 /app/db
+RUN chmod -R 777 /app/db
 
 # Expose the Flask app's port (adjust if necessary)
 EXPOSE 5000
